@@ -1,6 +1,4 @@
-Copy this directly into a file named `README.md`:
 
-````md
 # Bracket Validator
 
 ## Assignment
@@ -162,5 +160,4 @@ True
 | `hello(world)` | `True` |
 | `((())` | `False` |
 | `""` | `True` |
-````
 
