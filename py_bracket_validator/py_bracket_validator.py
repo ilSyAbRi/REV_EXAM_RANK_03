@@ -2,14 +2,15 @@ def bracket_validator(s: str) -> bool:
     stack = []
     dic = {"}":"{", "]":"[", ")":"("}
     for c in s:
-        if c in "{[(":
+        if c in dic.values():
             stack.append(c)
 
-        if c in "}])":
-            if stack and dic[c] == stack[-1]:
-                stack.pop()
+        elif c in dic.keys():
+            if not stack or dic[c] == stack[-1]:
+                return False
+        stack.pop()
 
     return len(stack) == 0
 
 
-print(bracket_validator(""))
+print(bracket_validator(")"))
